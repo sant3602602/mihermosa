@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Lina ❤</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+        color: #333;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+    .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+    }
+    h1, h2 {
+        animation: fadeIn 2s ease-in-out;
+    }
+    p {
+        font-size: 1.2em;
+        line-height: 1.5em;
+        animation: fadeIn 2s ease-in-out;
+    }
+    button {
+        background: #ff758c;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1em;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        margin: 10px;
+        transition: background 0.3s ease;
+    }
+    button:hover {
+        background: #ff4b5c;
+    }
+    .hidden {
+        display: none;
+    }
+    .fade {
+        animation: fadeIn 1.5s ease forwards;
+    }
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div id="pantalla1">
+        <h1>Hola, Lina ❤</h1>
+        <p>Antes de que estudies... tengo algo para ti.</p>
+        <button onclick="mostrarPantalla(2)">Comenzar</button>
+    </div>
+
+    <div id="pantalla2" class="hidden">
+        <h2>Quiero hacerte unas preguntas...</h2>
+        <p>Responde con el corazón 💖</p>
+        <button onclick="respuesta('Me importas tanto que ni palabras tengo para describirlo, llegaste a mi vida hace ya un año y punta y hasta el dia de hoy eres mi persona favorita, con la que me quiero casar y formar algo lindo, porque si no eres tu me pierdo yo, tu eres mi vida, mi adoracion, el tesoro mas presiado que tengo')">¿Sabes cuánto me importas?</button>
+        <button onclick="respuesta('Eres el lugar al que vuelve mi alma cuando todo me duele. Eres esa paz que no sabía que existía, la voz que calma lo que ni yo entiendo. Eres mi razón favorita para creer en lo imposible. Significas tanto, que si algún día te vas, el mundo se me haría idioma extranjero. Y aun así, te amaría en silencio, en todas las vidas que me falten')">¿Sabes qué significas para mí?</button>
+        <button onclick="mostrarPantalla(3)">Siguiente ➡</button>
+        <p id="respuesta1"></p>
+    </div>
+
+    <div id="pantalla3" class="hidden">
+        <h2>Algunas cosas que amo de ti...</h2>
+        <ul style="text-align:left; display:inline-block; font-size:1.1em;">
+            <li>Amo cómo me miras como si no hubiera nada roto en mí..</li>
+            <li>Amo que me escuches incluso cuando hablo con los ojos.</li>
+            <li>Que incluso con tus defectos, sigues siendo perfecta para mí.</li>
+            <li>Amo que aunque no siempre entiendas cómo soy, te quedas.</li>
+        </ul>
+        <button onclick="mostrarPantalla(4)">Continuar 💌</button>
+    </div>
+
+    <div id="pantalla4" class="hidden">
+        <h2>Lo que a veces no digo...</h2>
+        <p>Me cuesta verte rodeada de tanta gente nueva, porque me da miedo perder ese lugar especial que tengo en tu vida.  
+        Pero más que miedo, lo que siento es un amor enorme que no sabe cómo no querer protegerte.</p>
+        <button onclick="mostrarPantalla(5)">Seguir leyendo...</button>
+    </div>
+
+    <div id="pantalla5" class="hidden">
+        <h2>Mi promesa</h2>
+        <p>Voy a aprender a confiar más, a dejar que brilles sin que mis inseguridades apaguen nada.  
+        Porque tú mereces a alguien que no solo te ame, sino que también te admire y te deje ser libre.</p>
+        <button onclick="mostrarPantalla(6)">Final ❤</button>
+    </div>
+
+    <div id="pantalla6" class="hidden">
+        <h1>Te Amo, Lina 💖</h1>
+        <p>No importa cuántos amigos tengas, cuántos cambios vengan o qué tan rápido avance la vida...  
+        siempre quiero ser tu lugar seguro.  
+        Porque mi mejor versión siempre ha sido contigo.</p>
+        <audio autoplay loop>
+            <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+</div>
+
+<script>
+    function mostrarPantalla(num) {
+        for (let i = 1; i <= 6; i++) {
+            document.getElementById('pantalla' + i).classList.add('hidden');
+        }
+        document.getElementById('pantalla' + num).classList.remove('hidden');
+        document.getElementById('pantalla' + num).classList.add('fade');
+    }
+    function respuesta(texto) {
+        document.getElementById('respuesta1').innerText = texto;
+    }
+</script>
+
+</body>
+</html>
